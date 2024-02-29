@@ -1,0 +1,15 @@
+.select {
+	color: $dark;
+	font-size: 1.3rem;
+	width: 300px;
+
+	@include _576 {
+		flex: 0 1 100%;
+		order: 3;
+	}
+
+	&__option {
+		display: flex !important;
+		align-items: center;
+	}
+}

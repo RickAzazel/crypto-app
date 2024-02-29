@@ -1,0 +1,110 @@
+.table {
+	background-color: white;
+	color: $dark;
+	width: 100%;
+	border-radius: 1rem;
+	border-spacing: 0;
+	overflow: hidden;
+
+	caption {
+		color: $white;
+		margin-bottom: 1rem;
+	}
+
+	th,
+	td {
+		border-style: solid;
+		border-width: 0 1px 1px 0;
+		border-color: white;
+
+		@include _979 {
+			font-size: 1.4rem;
+		}
+	}
+
+	th {
+		position: relative;
+		background: $light;
+		padding: 1rem 2rem;
+		// text-shadow: 0 1px 1px #2D2020;
+		color: $blue;
+		cursor: pointer;
+
+		@include _480 {
+			padding-inline: 1rem;
+			font-size: 1rem;
+		}
+
+		&.up {
+			&::after {
+				transform: rotate(-90deg);
+				transition: all .5s;
+			}
+		}
+
+		&.down {
+			&::after {
+				transform: rotate(90deg);
+				transition: all .5s;
+			}
+		}
+
+		&::after {
+			content: '>';
+			display: block;
+			font-size: 3rem;
+			font-weight: 400;
+			position: absolute;
+			top: 0;
+			right: 15px;
+			transform: rotate(-90deg);
+
+			@include _979 {
+				top: 5px;
+				font-size: 2rem;
+			}
+
+			@include _480 {
+				top: 6px;
+				font-size: 1.5rem;
+			}
+		}
+
+		&:first-child {
+			border-top-left-radius: 10px;
+		}
+
+		&:last-child {
+			border-top-right-radius: 10px;
+			border-right: none;
+		}
+	}
+
+	tr {
+		&:last-child {
+			td:first-child {
+				border-radius: 0 0 0 10px;
+			}
+
+			td:last-child {
+				border-radius: 0 0 10px 0;
+			}
+		}
+
+		td:last-child {
+			border-right: none;
+		}
+	}
+
+	td {
+		padding: 10px 20px;
+		background: $blue;
+		color: $light;
+		// text-shadow: 0 1px 1px #2D2020;
+
+		@include _480 {
+			font-size: 1.2rem;
+			padding-inline: 0;
+		}
+	}
+}

@@ -1,0 +1,154 @@
+.sider {
+	@include _768 {
+		position: fixed;
+		top: 0; 
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		transform: translate(-100%);
+		opacity: 0;
+		transition: all 1s;
+
+		&--active {
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+
+	&__content {
+		min-width: 350px;
+		max-height: 736px;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem 1rem;
+		background-color: $dark-blue;
+		margin-top: $header-height--desktop;
+		overflow-y: auto;
+		border-radius: 1rem;
+
+		@include _979 {
+			min-width: 250px;
+			max-height: 865px;
+		}
+	
+		@include _768 {
+			position: fixed;
+			top: 0; 
+			left: 0;
+			bottom: 0;
+			min-width: 350px;
+			z-index: 100;
+			max-height: none;
+			border-radius: 0;
+			border-right: 1px solid $light;
+		}
+		
+		@include _576 {
+			margin-top: $header-height--tablets;
+		}
+	
+		@include _480 {
+			min-width: 100%;
+		}
+	}
+
+	&__placeholder {
+		display: none;
+		color: $light;
+		font-size: 2rem;
+		font-weight: 100;
+		text-align: center;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	.statistic {
+		background-color: $white;
+		border-radius: 1rem;
+		padding: 2rem;
+
+		&__title {
+			font-size: 1.3rem;
+			font-weight: 500;
+			color: $light;
+			margin-bottom: .3rem;
+
+			&::first-letter {
+				text-transform: capitalize;
+			}
+		}
+
+		&__data {
+			font-size: 2.2rem;
+			margin-bottom: .5rem;
+
+			@include _979 {
+				margin-bottom: 2rem;
+			}
+
+			@include _768 {
+				margin-bottom: .5rem;
+			}
+		}
+
+		&__list {
+			font-weight: 200;
+			padding-left: 1rem;
+			color: $dark;
+
+			&-item {
+				display: flex;
+				align-items: center;
+				border-bottom: 1px solid $light;
+
+				@include _979 {
+					flex-wrap: wrap;
+				}
+
+				@include _768 {
+					flex-wrap: nowrap;
+				}
+
+				&:first-child {
+					@include _979 {
+						padding-bottom: 1rem;
+						margin-bottom: 1rem;
+					}
+
+					@include _768 {
+						padding-bottom: 0;
+						margin-bottom: 0;
+					}
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			&-title {
+				flex: 0 1 100%;
+
+				@include _979 {
+					margin-bottom: .5rem;
+				}
+
+				@include _768 {
+					margin-bottom: 0;
+				}
+			}
+
+			&-icon {
+				justify-self: flex-end;
+				font-size: 3rem;
+				line-height: 0;
+			}
+		}
+	}
+
+
+}

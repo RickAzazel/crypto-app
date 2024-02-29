@@ -1,0 +1,18 @@
+.tag {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-left: .5rem;
+	padding: .2rem .5rem;
+	border: 1px solid;
+	border-radius: .5rem;
+
+	&--green {
+		background-color: $light-green;
+		color: $green;
+	}
+
+	&--red {
+		background-color: $light-red;
+		color: $red;
+	}
+}

@@ -1,0 +1,32 @@
+.header {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: $header-height--desktop;
+	background-color: $blue;
+	padding-inline: 3rem;
+	z-index: 1000;
+
+	&__assets-button {
+		display: none;
+		margin-right: 2rem;
+	}
+
+	&__add-asset-button {
+		min-width: 120px;
+		margin-left: 2rem;
+	}
+
+	@include _768 {
+		&__assets-button {
+			display: block;
+		}
+	}
+
+	@include _576 {
+		flex-wrap: wrap;
+		height: $header-height--tablets;
+	}
+}

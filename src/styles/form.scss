@@ -1,0 +1,117 @@
+.header__form {
+	@include _480 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include _350 {
+		.coin-info {
+			font-size: 1.1rem;
+		}
+	}
+}
+
+.header__form-title {
+	margin-left: 1rem;
+}
+
+.header__form-items {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	@include _480 {
+		width: fit-content;
+		font-size: 1.5rem;
+	}
+}
+
+.header__form-item {
+	margin-bottom: 1rem;
+
+	.label-amount::before,
+	.label-price::before {
+		content: '*';
+		color: $red;
+		margin-right: .5rem;
+	}
+
+	.label-price,
+	.label-total {
+		position: relative;
+	}
+
+	.label-price::after,
+	.label-total::after {
+		content: '$';
+		position: absolute;
+		top: 0;
+		right: -33px;
+		color: $dark;
+		margin-right: .5rem;
+
+		@include _350 {
+			top: 35px;
+			left: 10px;
+		}
+	}
+
+	.header__form-input--error {
+		border-color: $red;
+
+		&:focus {
+			border-color: $red;
+		}
+	}
+
+	.input-error {
+		text-align: right;
+		color: $red;
+		margin-top: .5rem;
+
+		@include _576 {
+			text-align: left;
+		}
+
+		@include _480 {
+			text-align: right;
+		}
+
+		@include _350 {
+			text-align: left;
+		}
+	}
+
+	label {
+		margin-right: 1rem;
+	}
+
+	input {
+		width: 200px;
+		padding: 1rem 2rem;
+		border: 2px solid;
+		border-radius: 1rem;
+
+		&::placeholder {
+			color: $dark;
+		}
+
+		&:focus {
+			border-color: $light-blue;
+		}
+	}
+
+	@include _350 {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.header__form-button {
+	align-self: center;
+	margin-top: 3rem;
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+}
+

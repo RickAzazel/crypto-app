@@ -1,0 +1,16 @@
+.coin-info {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid $light;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	font-size: 1.3rem;
+
+	&__icon {
+		width: 5rem;
+	}
+
+	&__title {
+		margin-left: 1.5rem;
+	}
+}

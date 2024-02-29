@@ -1,0 +1,55 @@
+.content {
+	flex: 0 1 70%;
+	height: 100%;
+	text-align: center;
+	background-color: $dark-blue;
+	color: $white;
+	padding: 1rem 2rem 4rem 2rem;
+	margin-top: $header-height--desktop;
+	// margin-bottom: 4rem;
+	min-height: 736px;
+	border-radius: 1rem;
+
+	@include _1200 {
+		flex-basis: 60%;
+	}
+
+	@include _979 {
+		flex-basis: 50%;
+		min-height: 865px;
+	}
+
+	@include _768 {
+		flex-basis: 100%;
+		border-radius: 0;
+		min-height: calc(100dvh - $header-height--desktop);
+	}
+
+	@include _576 {
+		margin-top: $header-height--tablets;
+		min-height: calc(100dvh - $header-height--tablets);
+	}
+
+	&__title {
+		font-weight: 500;
+		text-align: left;
+		color: $white;
+	}
+}
+
+/* portfolio-chart */
+.portfolio-chart {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 4rem;
+	height: 400px;
+
+	@include _576 {
+		height: 300px;
+	}
+
+	@include _350 {
+		height: 250px;
+	}
+}
+
